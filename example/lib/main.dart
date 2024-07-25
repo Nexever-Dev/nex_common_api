@@ -39,7 +39,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _displayText = jsonEncode(response);
       });
-    } catch (e, stackTrace) {
+    } catch (e) {
       setState(() {
         _displayText = 'Error: $e';
       });
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         _displayText = jsonEncode(response);
       });
-    } catch (e, stackTrace) {
+    } catch (e) {
       setState(() {
         _displayText = 'Error: $e';
       });
