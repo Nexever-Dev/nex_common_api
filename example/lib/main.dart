@@ -37,9 +37,14 @@ class _MyHomePageState extends State<MyHomePage> {
       );
 
       setState(() {
-        _displayText = jsonEncode(response);
+        setState(() {
+          _displayText = jsonEncode({
+            "status": response.$1,
+            "data": response.$2,
+          });
+        });
       });
-    } catch (e, stackTrace) {
+    } catch (e) {
       setState(() {
         _displayText = 'Error: $e';
       });
@@ -54,9 +59,14 @@ class _MyHomePageState extends State<MyHomePage> {
       );
 
       setState(() {
-        _displayText = jsonEncode(response);
+        setState(() {
+          _displayText = jsonEncode({
+            "status": response.$1,
+            "data": response.$2,
+          });
+        });
       });
-    } catch (e, stackTrace) {
+    } catch (e) {
       setState(() {
         _displayText = 'Error: $e';
       });
