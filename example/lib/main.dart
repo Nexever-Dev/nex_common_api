@@ -34,6 +34,10 @@ class _MyHomePageState extends State<MyHomePage> {
     try {
       var response = await apiMethods.getMethod(
         url: 'https://jsonplaceholder.typicode.com/posts/1',
+        headers: {
+          "Accept": "application/json",
+          "Content-Type": "application/json",
+        },
       );
 
       setState(() {
@@ -77,7 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('ApiMethods Example'),
+        title: const Text('Api Methods Example'),
       ),
       body: Center(
         child: Column(
@@ -85,25 +89,25 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             ElevatedButton(
               onPressed: _getData,
-              child: Text('GET Data'),
+              child: const Text('GET Data'),
             ),
             ElevatedButton(
               onPressed: _postData,
-              child: Text('POST Data'),
+              child: const Text('POST Data'),
             ),
-            SizedBox(height: 20),
-            Text(
+            const SizedBox(height: 20),
+            const Text(
               'Response:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Expanded(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   child: Text(
                     _displayText,
-                    style: TextStyle(fontSize: 16),
+                    style: const TextStyle(fontSize: 16),
                   ),
                 ),
               ),
